@@ -1,8 +1,8 @@
 # bashrc
-~/.bashrc
+记录 `~/.bashrc` 文件里配置的关键内容。
 
-# 激活 PolarFire RISC-V 交叉编译环境
 ```bash
+# 激活 RISC-V 交叉编译环境
 env_riscv() {
     source /opt/riscv/environment-setup-riscv64-mchp-linux
     export CC="riscv64-mchp-linux-gcc --sysroot=/opt/riscv/sysroots/riscv64-mchp-linux"
@@ -10,8 +10,8 @@ env_riscv() {
 }
 ```
 
-# 开启终端代理
 ```bash
+# 开启终端代理
 proxy_on() {
     export http_proxy=http://127.0.0.1:1080
     export https_proxy=http://127.0.0.1:1080
@@ -19,10 +19,8 @@ proxy_on() {
     export all_proxy=socks5://127.0.0.1:1080 
     echo "🟢 终端代理已开启"
 }
-```
 
-# 彻底清除终端代理
-```bash
+# 关闭终端代理
 proxy_off() {
     unset http_proxy
     unset https_proxy
